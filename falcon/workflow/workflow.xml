@@ -72,7 +72,7 @@
     </action>    
 
     <action name="load_raw_data">
-        <hive xmlns="uri:oozie:hive-action:0.2">
+        <!--<hive xmlns="uri:oozie:hive-action:0.2">
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>            
             <job-xml>${workflow_root_dir}/conf/hive-site.xml</job-xml>            
@@ -91,7 +91,23 @@
 			<param>workflow_root_dir=${workflow_root_dir}</param>
 			<param>hive_db=${hive_db}</param>
 			<param>omniture=${omniture}</param>        
-        </hive>
+        </hive>-->
+        
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+				<property>
+				   <name>mapred.job.queue.name</name>
+				   <value>${queueName}</value>
+				</property>            
+		    </configuration>
+            <exec>hdfs</exec>
+              <argument>dfs</argument>
+              <argument>-mv</argument>
+              <argument>${workflow_root_dir}/data/process/${execution_id}/*.input</argument>            
+              <argument>/user/ambari-qa/falcon_demo/hivedb/omniture</argument>                          
+        </shell>        
         <ok to="aggregate_data"/>
         <error to="end"/>
     </action>

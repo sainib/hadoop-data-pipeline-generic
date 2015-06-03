@@ -27,7 +27,7 @@ echo "Create conf File  directory - Start"
 su - hdfs -c "hdfs dfs -mkdir -p /user/ambari-qa/falcon_demo/conf"
 su - hdfs -c "hdfs dfs -chmod 777 /user/ambari-qa/falcon_demo/conf"
 su - hdfs -c "hdfs dfs -chown ambari-qa:hadoop /user/ambari-qa/falcon_demo/conf"
-su - ambari-qa -c "hdfs dfs -put /etc/hive/conf/hive-site.xml /user/ambari-qa/falcon_demo/conf"
+su - ambari-qa -c "hdfs dfs -put /tmp/hive-site.xml /user/ambari-qa/falcon_demo/conf"
 echo "Create conf File  directory - Done"
  
 #jars File Directories 
