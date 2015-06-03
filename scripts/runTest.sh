@@ -1,10 +1,8 @@
 #!/bin/bash
 
 
-su - hdfs -c "hdfs dfs -chmod 777 /user/ambari-qa/data_pipeline_demo/data"
+#su - hdfs -c "hdfs dfs -chmod 777 /user/ambari-qa/data_pipeline_demo/data"
 
-rm -rf /root/data_pipeline_demo/input/SV-sample*xml
-cp /app/hadoop-data-pipeline/input_data/SV-sample-1.xml /root/data_pipeline_demo/input/
-cp /app/hadoop-data-pipeline/input_data/SV-sample-2.xml /root/data_pipeline_demo/input/
-cp /app/hadoop-data-pipeline/input_data/SV-sample-3.xml /root/data_pipeline_demo/input/
+su - ambari-qa -c "mkdir /user/ambari-qa/falcon_landing_zon"e
 
+su - ambari-qa -c "cp /tmp/Omniture.0.tsv /user/ambari-qa/falcon_landing_zone/Omniture.$$.tsv"
