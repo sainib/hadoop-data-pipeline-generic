@@ -1,9 +1,9 @@
 
-create database railincdb;
+create database railinc_db;
 
-use railincdb;
+use railinc_db;
 
-CREATE EXTERNAL TABLE `test`(
+CREATE EXTERNAL TABLE `omniture`(
   `col_1` bigint, 
   `col_2` timestamp, 
   `col_3` bigint, 
@@ -182,15 +182,15 @@ CREATE EXTERNAL TABLE `test`(
   `col_176` string, 
   `col_177` string, 
   `col_178` string)
-COMMENT 'test '
+COMMENT 'omniture '
 ROW FORMAT DELIMITED 
   FIELDS TERMINATED BY '\t' 
 STORED AS INPUTFORMAT 
   'org.apache.hadoop.mapred.TextInputFormat' 
 OUTPUTFORMAT 
   'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
-LOCATION
-  'hdfs://sandbox.hortonworks.com:8020/user/ambari-qa/falcon_demo/db/raw'
+LOCATION 
+	'/user/ambari-qa/falcon_demo/hivedb/omniture';
 ;
 
 
@@ -200,7 +200,8 @@ CREATE EXTERNAL TABLE `ip_count`(
   `count` bigint )
 COMMENT 'ip_count'
 STORED AS ORC
-LOCATION
-  'hdfs://sandbox.hortonworks.com:8020/user/ambari-qa/falcon_demo/db/ip_count'
+LOCATION 
+	'/user/ambari-qa/falcon_demo/hivedb/ip_count';
+
 ;
 

@@ -23,7 +23,7 @@
 		
 		<locations>
 			<location type="data"
-			path="/user/ambari-qa/falcon_demo/data/backup/${YEAR}-${MONTH}-${DAY}-${HOUR}"/>
+			path="/user/ambari-qa/falcon_demo/backup/data/${YEAR}-${MONTH}-${DAY}-${HOUR}"/>
 		</locations>
 	</cluster>
             

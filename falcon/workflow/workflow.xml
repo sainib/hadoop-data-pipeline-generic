@@ -70,23 +70,6 @@
         <ok to="load_raw_data"/>
         <error to="end"/>
     </action>    
-    
-  <!--  <action name="cleanup_tmp_tables">
-        <hive xmlns="uri:oozie:hive-action:0.2">
-            <job-tracker>${jobTracker}</job-tracker>
-            <name-node>${nameNode}</name-node>
-            <job-xml>${workflow_root_dir}/conf/hive-site.xml</job-xml>            
-            <script>${workflow_root_dir}/hql/DML/cleanup_tmp_tables.hql</script>
-			<param>execution_id=${execution_id}</param>
-			<param>workflow_root_dir=${workflow_root_dir}</param>
-			<param>hive_db=${hive_db}</param>
-			<param>json_raw_table=${json_raw_table}</param>
-			<param>json_events_table=${json_events_table}</param>
-			<param>export_table=${export_table}</param>			
-        </hive>
-        <ok to="load_raw_data"/>
-        <error to="load_raw_data"/>
-    </action>-->
 
     <action name="load_raw_data">
         <hive xmlns="uri:oozie:hive-action:0.2">
@@ -107,7 +90,7 @@
 			<param>execution_id=${execution_id}</param>
 			<param>workflow_root_dir=${workflow_root_dir}</param>
 			<param>hive_db=${hive_db}</param>
-			<param>xml_raw_table=${xml_raw_table}</param>        
+			<param>omniture=${omniture}</param>        
         </hive>
         <ok to="aggregate_data"/>
         <error to="end"/>
@@ -132,12 +115,8 @@
 			<param>execution_id=${execution_id}</param>
 			<param>workflow_root_dir=${workflow_root_dir}</param>
 			<param>hive_db=${hive_db}</param>
-			<param>xml_raw_table=${xml_raw_table}</param>        
-			<param>json_events_table=${json_events_table}</param>        					
-			<param>json_raw_table=${json_raw_table}</param>        
-			<param>export_table=${export_table}</param>        
-			<param>xml_archive_table=${xml_archive_table}</param>        
-			<param>json_events_master_table=${json_events_master_table}</param>        
+			<param>omniture=${omniture}</param>        
+			<param>ip_table=${ip_table}</param>        					
             <file>${workflow_root_dir}/jars/hive-hcatalog-core.jar</file>
             <archive>${workflow_root_dir}/jars/hive-hcatalog-core.jar</archive>			
         </hive>
