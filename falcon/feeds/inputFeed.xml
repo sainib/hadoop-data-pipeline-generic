@@ -17,7 +17,7 @@
     </clusters>
     
         
-	<cluster name="backupCluster" type="target">
+<!--	<cluster name="backupCluster" type="target">
             <validity start="2015-03-14T00:00Z" end="2016-02-08T22:00Z"/>
 		<retention limit="months(36)" action="delete"/>
 		
@@ -26,7 +26,7 @@
 			path="/user/ambari-qa/falcon_demo/backup/data/${YEAR}-${MONTH}-${DAY}-${HOUR}"/>
 		</locations>
 	</cluster>
-            
+            -->
     
     <locations>
         <location type="data" path="/user/ambari-qa/falcon_demo/data/input"/>
