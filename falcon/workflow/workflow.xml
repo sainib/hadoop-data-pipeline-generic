@@ -132,7 +132,7 @@
 			<param>workflow_root_dir=${workflow_root_dir}</param>
 			<param>hive_db=${hive_db}</param>
 			<param>omniture=${omniture}</param>        
-			<param>ip_table=${ip_table}</param>        					
+			<param>ip_count=${ip_count}</param>        					
             <file>${workflow_root_dir}/jars/hive-hcatalog-core.jar</file>
             <archive>${workflow_root_dir}/jars/hive-hcatalog-core.jar</archive>			
         </hive>

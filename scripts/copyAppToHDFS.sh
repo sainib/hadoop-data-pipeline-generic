@@ -15,7 +15,7 @@ su - ambari-qa -c "hdfs dfs -put /usr/hdp/${hdp_version}/hive-hcatalog/share/hca
 echo "Copied Serde jar files to HDFS"
 su - ambari-qa -c "hdfs dfs -put ${project_root}/jars/* /user/ambari-qa/falcon_demo/jars/"
 echo "Copied other jar files to HDFS"
-su - ambari-qa -c "hdfs dfs -put ${project_root}/falcon/workflow/* /user/ambari-qa/falcon_demo/falcon/workflow/"
+su - ambari-qa -c "hdfs dfs -put /app/hadoop-data-pipeline-generic/falcon/workflow/* /user/ambari-qa/falcon_demo/falcon/workflow/"
 echo "Copied Falcon workflow files to HDFS"
 su - ambari-qa -c "hdfs dfs -put /etc/hive/conf/hive-site.xml /user/ambari-qa/falcon_demo/conf"
 echo "Copied conf files to HDFS"
