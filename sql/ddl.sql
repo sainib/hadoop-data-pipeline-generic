@@ -1,16 +1,16 @@
 
-create database demomysql;
+create database railinc_mysql;
 
-use demomysql;
+use railinc_mysql;
 
 create table ip_count(
 ip VARCHAR(255),
-count BIGINT,
+count BIGINT
 ) ;
 
 create user 'demouser'@'localhost' identified by 'demopwd';
 
-GRANT ALL PRIVILEGES ON demomysql.* TO 'demouser'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON railinc_mysql.* TO 'demouser'@'localhost' WITH GRANT OPTION;
 
 FLUSH PRIVILEGES;
 

@@ -36,7 +36,7 @@
 
 		<property name="queueName" value="default" />		
 		
-		<property name="EXPORT_JDBC_URL" value="jdbc:mysql://localhost:3306/demomysql" />
+		<property name="EXPORT_JDBC_URL" value="jdbc:mysql://localhost:3306/railinc_mysql" />
 		<property name="EXPORT_USER_ID" value="demouser" />
 		<property name="EXPORT_USER_PASSWORD" value="demopwd" />
 		<property name="EXPORT_DATA_SOURCE_DIR" value="/user/ambari-qa/falcon_demo/hivedb/" />
